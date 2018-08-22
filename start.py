@@ -123,8 +123,7 @@ def main():
                             cv2.rectangle(frame, (d[0], d[1]), (d[2], d[3]), colours[d[4] % 32, :] * 255, 5)
                             cv2.putText(frame, 'ID : %d' % (d[4]), (d[0] - 10, d[1] - 10), cv2.FONT_HERSHEY_SIMPLEX,
                                         0.75,colours[d[4] % 32, :] * 255, 2)
-                            if final_faces != []:
-                                cv2.putText(frame, 'DETECTOR', (5, 45), cv2.FONT_HERSHEY_SIMPLEX, 0.75,(1, 1, 1), 2)
+                            
                     if display:
                         frame = cv2.resize(frame, (0, 0), fx=show_rate, fy=show_rate)
                         cv2.imshow("Frame", frame)
