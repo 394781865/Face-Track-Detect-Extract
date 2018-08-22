@@ -14,7 +14,6 @@ logger = utils.Logger("MOT")
 
 
 class Sort:
-
     def __init__(self, max_age=1, min_hits=3, use_dlib=False):
         """
         Sets key parameters for SORT
@@ -32,7 +31,6 @@ class Sort:
           dets - a numpy array of detections in the format [[x,y,w,h,score],[x,y,w,h,score],...]
         Requires: this method must be called once for each frame even with empty detections.
         Returns the a similar array, where the last column is the object ID.
-
         NOTE:as in practical realtime MOT, the detector doesn't run on every single frame
         """
         self.frame_count += 1
@@ -86,3 +84,6 @@ class Sort:
         if (len(ret) > 0):
             return np.concatenate(ret)
         return np.empty((0, 5))
+
+
+
