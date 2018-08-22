@@ -3,11 +3,8 @@ import os
 import time
 import uuid
 from operator import itemgetter
-
 import cv2
-import project_root_dir
 
-log_file_root_path = os.path.join(project_root_dir.project_dir, 'logs')
 log_time = time.strftime('%Y_%m_%d_%H_%M', time.localtime(time.time()))
 
 
@@ -35,10 +32,9 @@ def save_to_file(root_dic, tracker):
 
 
 class Logger():
-
     def __init__(self, module_name) -> None:
         super().__init__()
-        path_join = os.path.join(log_file_root_path, module_name)
+        path_join = os.path.join('logs', module_name)
         mkdir(path_join)
 
         self.logger = logging.getLogger(module_name)
